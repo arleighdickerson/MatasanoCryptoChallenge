@@ -1,6 +1,6 @@
 package set1
 
-import set1.Codecs._
+import Codecs._
 
 object DetectSingleCharXOR {
   val messages = scala.io.Source.fromFile("./4.txt").getLines.toList.map(Hex.decode(_))
