@@ -10,6 +10,7 @@ trait Codec {
   def unapply(str: String) = Try(decode(str)).toOption
 }
 object Codecs {
+  implicit def string2bytes(str: String) = str.getBytes("US-ASCII")
   object Hex extends Codec {
     import org.apache.commons.codec.binary.Hex.{ decodeHex, encodeHexString }
     def encode(bytes: Array[Byte]): String = encodeHexString(bytes)
