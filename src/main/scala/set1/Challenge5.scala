@@ -1,6 +1,6 @@
 package set1
-
-object RepeatingKeyXOR {
+import Codecs._
+object Challenge5 {
   def makeRepeatingKey(message: String, key: String, accum: String = ""): String = {
     if (accum.length < message.length)
       makeRepeatingKey(message, key, accum + key)
@@ -9,9 +9,9 @@ object RepeatingKeyXOR {
   }
 
   def apply(message: String, key: String) = {
-    Codecs.Hex encode message.getBytes("US-ASCII")
-      .zip(makeRepeatingKey(message, key).getBytes("US-ASCII"))
-      .map((t) => (t._1 ^ t._2).toByte)
+    Hex encode message.getBytes
+      .zip(makeRepeatingKey(message, key).getBytes)
+      .map((t) => t._1 ^ t._2 toByte)
   }
 
   def main(args: Array[String]) = {

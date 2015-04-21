@@ -1,11 +1,9 @@
 package set1
 import Codecs.Hex._
 
-object FixedXOR {
-  def apply(buffer0: String, buffer1: String) = encode(
-    decode(buffer0)
-      .zip(decode(buffer1))
-      .map((t) => (t._1 ^ t._2).toByte))
+object Challenge2 {
+  def apply(buffer0: String, buffer1: String) =
+    encode(decode(buffer0) zip decode(buffer1) map { (t) => (t._1 ^ t._2).toByte })
 
   def main(args: Array[String]) = {
     val message = "1c0111001f010100061a024b53535009181c"
