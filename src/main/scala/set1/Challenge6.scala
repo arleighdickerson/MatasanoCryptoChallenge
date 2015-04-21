@@ -26,7 +26,7 @@ object Challenge6 {
   val keyLengths = (2 to 40).sortBy(weightedDistance _)
 
   def main(args: Array[String]): Unit = {
-    keyLengths.take(5).map(findKey _) foreach ((key) => {
+    keyLengths.take(1).map(findKey _) foreach ((key) => {
       println(decrypt(key))
       println("-" * 80)
     })
