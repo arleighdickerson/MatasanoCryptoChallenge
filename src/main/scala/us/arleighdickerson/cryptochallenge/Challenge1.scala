@@ -1,4 +1,4 @@
-package set1
+package us.arleighdickerson.cryptochallenge
 import Codecs._
 object Challenge1 {
   def main(args: Array[String]) = {

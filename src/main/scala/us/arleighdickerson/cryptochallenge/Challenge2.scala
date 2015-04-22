@@ -1,9 +1,9 @@
-package set1
+package us.arleighdickerson.cryptochallenge
 import Codecs.Hex._
 
 object Challenge2 {
   def apply(buffer0: String, buffer1: String) =
-    encode(decode(buffer0) zip decode(buffer1) map { (t) => (t._1 ^ t._2).toByte })
+    encode(decode(buffer0) xor decode(buffer1))
 
   def main(args: Array[String]) = {
     val message = "1c0111001f010100061a024b53535009181c"

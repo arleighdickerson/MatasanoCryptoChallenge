@@ -1,4 +1,4 @@
-package set1
+package us.arleighdickerson.cryptochallenge
 
 import Codecs.Hex._
 import PlaintextScoring._

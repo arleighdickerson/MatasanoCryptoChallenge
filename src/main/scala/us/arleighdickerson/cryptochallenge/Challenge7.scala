@@ -1,4 +1,4 @@
-package set1
+package us.arleighdickerson.cryptochallenge
 import scala.io.Source
 import Codecs._
 import javax.crypto.Cipher

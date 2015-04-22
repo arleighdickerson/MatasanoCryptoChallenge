@@ -1,4 +1,4 @@
-package set1
+package us.arleighdickerson.cryptochallenge
 import Codecs._
 import scala.io.Source
 object Challenge8 {

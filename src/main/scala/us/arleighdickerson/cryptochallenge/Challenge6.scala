@@ -1,4 +1,4 @@
-package set1
+package us.arleighdickerson.cryptochallenge
 import Codecs._
 import scala.io.Source
 object Challenge6 {
@@ -7,16 +7,7 @@ object Challenge6 {
     .getLines
     .foldLeft("")(_ + _))
 
-  /**
-   * @see http://www.tautvidas.com/blog/2013/07/compute-hamming-distance-of-byte-arrays/
-   */
-  def hammingDistance(from: Array[Byte], to: Array[Byte]) = {
-    def countSetBits(byte: Byte): Int = (0 to 7).map((i: Int) => (byte >>> i) & 1).sum
-    (from.zip(to).map((t) => countSetBits((t._1 ^ t._2).toByte))).sum //xor like bitwise neq
-  }
-
-  def distances(slices: Seq[Array[Byte]]) = for (i <- (0 to slices.length - 2))
-    yield hammingDistance(slices.apply(i), slices.apply(i + 1))
+  def distances(slices: Seq[Array[Byte]]) = for (i <- (0 to slices.length - 2)) yield slices.apply(i) - slices.apply(i + 1)
 
   def weightedDistance(keyLength: Int) = {
     val lengths = distances(message.grouped(keyLength).toSeq)
@@ -34,7 +25,7 @@ object Challenge6 {
 
   def decrypt(key: Array[Byte]) = {
     val repeatedKey = Stream.continually(key.toStream).flatten.take(message.length)
-    new String(message.zip(repeatedKey).map((t) => (t._1 ^ t._2) toByte))
+    new String(message xor repeatedKey)
   }
 
   def blocks(keySize: Int, message: Array[Byte] = this.message): Seq[Array[Byte]] = {
@@ -50,10 +41,8 @@ object Challenge6 {
   def findKeyForBlock(block: Seq[Byte]): Byte = {
     val possibleKeys = (0 to 255) map (_ toByte)
     def score(key: Byte) = {
-      val result = block
-        .zip(Array.fill(block.length)(key))
-        .map((t) => t._1 ^ t._2 toByte) //xor them
-      PlaintextScoring.byCharacters(new String(result toArray))
+      val result = block.toArray xor (Array.fill(block.length)(key))
+      PlaintextScoring.byCharacters(new String(result))
     }
     possibleKeys.map((key) => key -> score(key)).sortBy({ _._2 }).last._1
   }

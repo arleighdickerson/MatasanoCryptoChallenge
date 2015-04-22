@@ -1,4 +1,4 @@
-package set1
+package us.arleighdickerson.cryptochallenge
 import Codecs._
 object Challenge5 {
   def makeRepeatingKey(message: String, key: String, accum: String = ""): String = {
@@ -8,11 +8,7 @@ object Challenge5 {
       accum.substring(0, message.length)
   }
 
-  def apply(message: String, key: String) = {
-    Hex encode message.getBytes
-      .zip(makeRepeatingKey(message, key).getBytes)
-      .map((t) => t._1 ^ t._2 toByte)
-  }
+  def apply(message: String, key: String) = Hex encode message.getBytes.xor(makeRepeatingKey(message, key).getBytes)
 
   def main(args: Array[String]) = {
     val message = "Burning 'em, if you ain't quick and nimble I go crazy when I hear a cymbal"
