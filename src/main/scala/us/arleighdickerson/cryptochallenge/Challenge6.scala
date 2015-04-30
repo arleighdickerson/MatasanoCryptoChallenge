@@ -25,7 +25,7 @@ object Challenge6 {
 
   def decrypt(key: Array[Byte]) = {
     val repeatedKey = Stream.continually(key.toStream).flatten.take(message.length)
-    new String(message xor repeatedKey)
+    new String(message xor (repeatedKey.toArray))
   }
 
   def blocks(keySize: Int, message: Array[Byte] = this.message): Seq[Array[Byte]] = {
