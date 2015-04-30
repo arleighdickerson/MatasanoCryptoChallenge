@@ -1,5 +1,11 @@
 package us.arleighdickerson.cryptochallenge
 import Codecs._
+
+/**
+ * @author Arleigh Dickerson
+ * 
+ * http://cryptopals.com/sets/1/challenges/6/
+ */
 import scala.io.Source
 object Challenge6 {
   val message = Base64.decode(Source

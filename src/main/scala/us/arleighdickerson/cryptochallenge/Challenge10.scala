@@ -7,6 +7,13 @@ import scala.io.Source
 import Challenge7.cbcDecrypt
 import Codecs.Base64
 
+/**
+ * @author Arleigh Dickerson
+ *
+ * http://cryptopals.com/sets/2/challenges/10/
+ * 
+ * still working on this one...
+ */
 object Challenge10 {
   val message =
     Base64 decode (Source.fromURL("http://cryptopals.com/static/challenge-data/10.txt")

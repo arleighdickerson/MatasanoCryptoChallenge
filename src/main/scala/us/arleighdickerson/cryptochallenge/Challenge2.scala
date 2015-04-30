@@ -1,6 +1,11 @@
 package us.arleighdickerson.cryptochallenge
 import Codecs.Hex._
 
+/**
+ * @author Arleigh Dickerson
+ * 
+ * http://cryptopals.com/sets/1/challenges/2/
+ */
 object Challenge2 {
   def apply(buffer0: String, buffer1: String) =
     encode(decode(buffer0) xor decode(buffer1))

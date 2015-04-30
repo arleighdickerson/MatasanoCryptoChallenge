@@ -3,6 +3,11 @@ import scala.io.Source
 import Codecs._
 import javax.crypto.Cipher
 import javax.crypto.spec.SecretKeySpec
+/**
+ * @author Arleigh Dickerson
+ * 
+ * http://cryptopals.com/sets/1/challenges/7/
+ */
 object Challenge7 {
   val message = Base64.decode(Source
     .fromURL("http://cryptopals.com/static/challenge-data/7.txt")

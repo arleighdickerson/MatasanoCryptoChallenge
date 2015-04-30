@@ -1,5 +1,10 @@
 package us.arleighdickerson.cryptochallenge
 import Codecs._
+/**
+ * @author Arleigh Dickerson
+ * 
+ * http://cryptopals.com/sets/1/challenges/5/
+ */
 object Challenge5 {
   def makeRepeatingKey(message: String, key: String, accum: String = ""): String = {
     if (accum.length < message.length)

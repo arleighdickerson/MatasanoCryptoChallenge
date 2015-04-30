@@ -1,6 +1,11 @@
 package us.arleighdickerson.cryptochallenge
 import Codecs._
 
+/**
+ * @author Arleigh Dickerson
+ * 
+ * http://cryptopals.com/sets/1/challenges/3/
+ */
 object Challenge3 {
   def main(args: Array[String]) = {
     val message = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736"

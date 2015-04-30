@@ -1,6 +1,11 @@
 package us.arleighdickerson.cryptochallenge
 import Codecs._
 import scala.io.Source
+/**
+ * @author Arleigh Dickerson
+ *
+ * http://cryptopals.com/sets/1/challenges/8/
+ */
 object Challenge8 {
   val messages = Source.fromURL("http://cryptopals.com/static/challenge-data/8.txt").getLines.toList
 

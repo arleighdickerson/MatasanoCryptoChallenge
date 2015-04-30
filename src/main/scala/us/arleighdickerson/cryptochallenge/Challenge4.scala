@@ -4,6 +4,11 @@ import Codecs.Hex._
 import PlaintextScoring._
 import scala.io.Source
 
+/**
+ * @author Arleigh Dickerson
+ * 
+ * http://cryptopals.com/sets/1/challenges/4/
+ */
 object Challenge4 {
   def main(args: Array[String]) = {
     val messages = Source.fromURL("http://cryptopals.com/static/challenge-data/4.txt").getLines.toList.map(decode _)
