@@ -1,4 +1,4 @@
-package us.arleighdickerson
+package io.arleigh
 
 package object cryptochallenge {
   implicit class RichString(str: String) {

@@ -1,4 +1,4 @@
-package us.arleighdickerson.cryptochallenge
+package io.arleigh.cryptochallenge
 
 import Codecs.Hex._
 import PlaintextScoring._

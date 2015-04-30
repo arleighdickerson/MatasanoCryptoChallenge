@@ -1,4 +1,5 @@
-package us.arleighdickerson.cryptochallenge
+package io.arleigh.cryptochallenge
+
 import Codecs._
 import scala.io.Source
 /**

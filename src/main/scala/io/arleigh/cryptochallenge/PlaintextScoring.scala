@@ -1,5 +1,5 @@
 
-package us.arleighdickerson.cryptochallenge
+package io.arleigh.cryptochallenge
 
 import scala.io.Source
 object PlaintextScoring {

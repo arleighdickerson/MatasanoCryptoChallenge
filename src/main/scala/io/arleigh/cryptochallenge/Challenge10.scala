@@ -1,4 +1,4 @@
-package us.arleighdickerson.cryptochallenge
+package io.arleigh.cryptochallenge
 
 import javax.crypto.Cipher
 import javax.crypto.SecretKeyFactory
@@ -33,7 +33,7 @@ object Challenge10 {
     val enc = aesEnc(Cipher.ENCRYPT_MODE)_
     val encrypted = {
       var cipherblock = iv
-      (for (text <- plaintext.grouped(16)) yield {
+      (for (text <- message.grouped(16)) yield {
         val result = enc(cipherblock xor text padPKCB 16)
         cipherblock = result
         result

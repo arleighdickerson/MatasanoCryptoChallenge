@@ -1,4 +1,4 @@
-package us.arleighdickerson.cryptochallenge
+package io.arleigh.cryptochallenge
 
 /**
  * @author Arleigh Dickerson

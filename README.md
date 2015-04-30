@@ -1,1 +1,4 @@
-My results for the MATASONO CRYPTO CHALLENGE http://cryptopals.com/
+My results for set 1
+
+http://cryptopals.com/
+
